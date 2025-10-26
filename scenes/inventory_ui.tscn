@@ -1,0 +1,310 @@
+[gd_scene load_steps=15 format=3 uid="uid://b0nlh5b0wkeug"]
+
+[ext_resource type="Texture2D" uid="uid://cv862nm1qub3u" path="res://assets/ui/inventory/inventario_fondo.png" id="1_tahbm"]
+[ext_resource type="Script" uid="uid://b2snik6wueu1j" path="res://scripts/inventory_ui.gd" id="1_ylkvr"]
+[ext_resource type="Texture2D" uid="uid://f877jdfktd3f" path="res://assets/ui/inventory/slot_sombrero.png" id="3_mdwe3"]
+[ext_resource type="Texture2D" uid="uid://bov8uww13lvai" path="res://assets/ui/inventory/slot_torso.png" id="4_iradw"]
+[ext_resource type="Texture2D" uid="uid://cogqjvvy8iejl" path="res://assets/ui/inventory/slot_pantalones.png" id="5_eifbp"]
+[ext_resource type="Texture2D" uid="uid://df08wtyvu3ja4" path="res://assets/sprites/playerSprite.png" id="6_uwj4j"]
+[ext_resource type="Texture2D" uid="uid://7vo2edae5v1" path="res://assets/ui/inventory/slot_pesca.png" id="7_1dxi5"]
+[ext_resource type="Texture2D" uid="uid://dayij3hkv6aom" path="res://assets/ui/inventory/slot_cebo.png" id="8_dqfnd"]
+[ext_resource type="Texture2D" uid="uid://c73r3jsgmfhf1" path="res://assets/ui/inventory/slot_vacio.png" id="9_1dxi5"]
+[ext_resource type="FontFile" uid="uid://dj7k136noki4a" path="res://assets/fonts/Jersey10-Regular.ttf" id="10_dqfnd"]
+[ext_resource type="Texture2D" uid="uid://cfgghqyhtuec6" path="res://assets/sprites/coin.png" id="11_ngbl7"]
+[ext_resource type="Texture2D" uid="uid://uy65perw4w3v" path="res://assets/ui/cerrar.png" id="12_cwdri"]
+[ext_resource type="Texture2D" uid="uid://cica1cgq4exbn" path="res://assets/ui/cerrarHover.png" id="13_rg5pf"]
+[ext_resource type="Script" uid="uid://cdjp46tcfyx82" path="res://scripts/close_button.gd" id="14_rg5pf"]
+
+[node name="InventoryUI" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_ylkvr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(160, 120)
+texture = ExtResource("1_tahbm")
+stretch_mode = 5
+
+[node name="TopSection" type="MarginContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/TopSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="EquipmentLeft" type="VBoxContainer" parent="TextureRect/TopSection/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SlotHat" type="TextureRect" parent="TextureRect/TopSection/HBoxContainer/EquipmentLeft"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_mdwe3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SlotTorso" type="TextureRect" parent="TextureRect/TopSection/HBoxContainer/EquipmentLeft"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_iradw")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SlotLegs" type="TextureRect" parent="TextureRect/TopSection/HBoxContainer/EquipmentLeft"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("5_eifbp")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CharacterSprite" type="TextureRect" parent="TextureRect/TopSection/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("6_uwj4j")
+stretch_mode = 5
+
+[node name="EquipmentRight" type="VBoxContainer" parent="TextureRect/TopSection/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SlotCania" type="TextureRect" parent="TextureRect/TopSection/HBoxContainer/EquipmentRight"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SlotCebo" type="TextureRect" parent="TextureRect/TopSection/HBoxContainer/EquipmentRight"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_dqfnd")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BottomSection" type="MarginContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="InventoryGrid" type="GridContainer" parent="TextureRect/BottomSection"]
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 8
+
+[node name="Slot" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot2" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot3" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot4" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot5" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot6" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot7" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot8" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot9" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot10" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot11" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot12" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot13" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot14" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot15" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Slot16" type="TextureRect" parent="TextureRect/BottomSection/InventoryGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_1dxi5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+offset_left = 14.5
+offset_top = 10.5
+offset_right = 111.5
+offset_bottom = 33.5
+theme_override_colors/font_color = Color(0.360784, 0.227451, 0.129412, 1)
+theme_override_fonts/font = ExtResource("10_dqfnd")
+theme_override_font_sizes/font_size = 18
+text = "INVENTARIO"
+
+[node name="MoneyDisplay" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -97.0
+offset_top = 2.0
+offset_right = -57.0
+offset_bottom = 42.0
+grow_horizontal = 0
+alignment = 1
+
+[node name="Coin" type="TextureRect" parent="TextureRect/MoneyDisplay"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("11_ngbl7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureRect/MoneyDisplay"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0.227451, 0.129412, 1)
+theme_override_fonts/font = ExtResource("10_dqfnd")
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="CloseButton" type="TextureButton" parent="TextureRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -29.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 30.0
+grow_horizontal = 0
+pivot_offset = Vector2(8, 8)
+texture_normal = ExtResource("12_cwdri")
+texture_hover = ExtResource("13_rg5pf")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("14_rg5pf")
+
+[connection signal="mouse_entered" from="TextureRect/CloseButton" to="TextureRect/CloseButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/CloseButton" to="TextureRect/CloseButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="TextureRect/CloseButton" to="." method="_on_close_button_pressed"]

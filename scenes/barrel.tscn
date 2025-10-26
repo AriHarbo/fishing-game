@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqw2lpfnypgel"]
+
+[ext_resource type="PackedScene" uid="uid://cawfmtjg4edu3" path="res://scenes/interactable.tscn" id="1_ptqd7"]
+[ext_resource type="Script" uid="uid://cnurcu2cvilug" path="res://scripts/barrel.gd" id="2_mhtw8"]
+[ext_resource type="Texture2D" uid="uid://b35i5wrmqnd7b" path="res://assets/sprites/barrel.png" id="2_n8wf6"]
+[ext_resource type="Resource" uid="uid://bqvv3qvfck3t6" path="res://items/fishing_rod_basic.tres" id="3_mhtw8"]
+
+[node name="Interactable" instance=ExtResource("1_ptqd7")]
+script = ExtResource("2_mhtw8")
+item_to_give = ExtResource("3_mhtw8")
+
+[node name="Visual" parent="." index="0"]
+texture_filter = 1
+position = Vector2(0, -16)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_n8wf6")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+z_index = 1
+position = Vector2(0, -17)
+
+[node name="KeyPrompt" parent="." index="2"]
+position = Vector2(0, -46)

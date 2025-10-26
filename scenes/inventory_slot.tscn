@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://drat2xih5j8ex"]
+
+[ext_resource type="Texture2D" uid="uid://c73r3jsgmfhf1" path="res://assets/ui/inventory/slot_vacio.png" id="1_hddt5"]
+[ext_resource type="Script" uid="uid://u4fvow5ciihk" path="res://scripts/inventory_slot.gd" id="2_bbig2"]
+[ext_resource type="FontFile" uid="uid://dj7k136noki4a" path="res://assets/fonts/Jersey10-Regular.ttf" id="3_c13kb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s2hqy"]
+texture = ExtResource("1_hddt5")
+
+[node name="InventorySlot" type="Panel"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_s2hqy")
+script = ExtResource("2_bbig2")
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuantityLabel" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 25.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_c13kb")
+theme_override_font_sizes/font_size = 12
+text = "99"

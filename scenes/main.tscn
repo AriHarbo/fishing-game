@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b56x0cbx0npeb"]
+[gd_scene load_steps=11 format=4 uid="uid://b56x0cbx0npeb"]
 
 [ext_resource type="Script" uid="uid://cvpq4kp1m3omj" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dypeouljh1ap6" path="res://scenes/player.tscn" id="2_0wfyh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ddrfjy5geexb4" path="res://scripts/tile_map_layer.gd" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://hqktyqq0hwrd" path="res://assets/tiles/tiles_dirt.png" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b0nlh5b0wkeug" path="res://scenes/inventory_ui.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dqw2lpfnypgel" path="res://scenes/barrel.tscn" id="7_o6xl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wfyh"]
 texture = ExtResource("2_jyhfs")
@@ -50,10 +51,12 @@ sources/0 = SubResource("TileSetAtlasSource_0wfyh")
 sources/1 = SubResource("TileSetAtlasSource_tefeu")
 
 [node name="Main" type="Node2D"]
-position = Vector2(110, 114)
+position = Vector2(112, 115)
 script = ExtResource("1_jyhfs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="." instance=ExtResource("6_tefeu")]
 
 [node name="TileMap_colision" type="TileMapLayer" parent="."]
 y_sort_enabled = true
@@ -70,11 +73,16 @@ tile_set = SubResource("TileSet_sugp2")
 collision_enabled = false
 script = ExtResource("2_sugp2")
 
-[node name="Player" parent="." instance=ExtResource("2_0wfyh")]
+[node name="GameObjects" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Player" parent="GameObjects" instance=ExtResource("2_0wfyh")]
 position = Vector2(26, 3)
 scale = Vector2(0.9, 0.9)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="GameObjects/Player"]
 zoom = Vector2(4, 4)
 
-[node name="InventoryUI" parent="." instance=ExtResource("6_tefeu")]
+[node name="Barrel" parent="GameObjects" instance=ExtResource("7_o6xl0")]
+position = Vector2(122, 12)

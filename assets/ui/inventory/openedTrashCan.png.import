@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brboycj8w8dse"
-path="res://.godot/imported/tiles_pasto1.png-ca59aff506f221f37ac026201f2f08d3.ctex"
+uid="uid://brb6ff0a4mq35"
+path="res://.godot/imported/openedTrashCan.png-57b7313d1f1f11f3244cc324dae8ff31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/tiles_pasto1.png"
-dest_files=["res://.godot/imported/tiles_pasto1.png-ca59aff506f221f37ac026201f2f08d3.ctex"]
+source_file="res://assets/ui/inventory/openedTrashCan.png"
+dest_files=["res://.godot/imported/openedTrashCan.png-57b7313d1f1f11f3244cc324dae8ff31.ctex"]
 
 [params]
 

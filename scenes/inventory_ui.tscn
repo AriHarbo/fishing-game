@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0nlh5b0wkeug"]
+[gd_scene load_steps=21 format=3 uid="uid://b0nlh5b0wkeug"]
 
 [ext_resource type="Texture2D" uid="uid://cv862nm1qub3u" path="res://assets/ui/inventory/inventario_fondo.png" id="1_tahbm"]
 [ext_resource type="Script" uid="uid://b2snik6wueu1j" path="res://scripts/inventory_ui.gd" id="1_ylkvr"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://uy65perw4w3v" path="res://assets/ui/cerrar.png" id="12_cwdri"]
 [ext_resource type="Texture2D" uid="uid://cica1cgq4exbn" path="res://assets/ui/cerrarHover.png" id="13_rg5pf"]
 [ext_resource type="Script" uid="uid://cdjp46tcfyx82" path="res://scripts/close_button.gd" id="14_rg5pf"]
+[ext_resource type="PackedScene" uid="uid://qxtgrpe6cm4k" path="res://scenes/trash_can.tscn" id="15_rmxcj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmxcj"]
 texture = ExtResource("3_mdwe3")
@@ -92,7 +93,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_rc4hi")
 
 [node name="CharacterSprite" type="TextureRect" parent="TextureRect/TopSection/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("6_uwj4j")
 stretch_mode = 5
@@ -187,6 +188,12 @@ texture_hover = ExtResource("13_rg5pf")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("14_rg5pf")
+
+[node name="TrashCan" parent="TextureRect" instance=ExtResource("15_rmxcj")]
+offset_left = 315.5
+offset_top = 194.0
+offset_right = 355.5
+offset_bottom = 234.0
 
 [connection signal="mouse_entered" from="TextureRect/CloseButton" to="TextureRect/CloseButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect/CloseButton" to="TextureRect/CloseButton" method="_on_mouse_exited"]

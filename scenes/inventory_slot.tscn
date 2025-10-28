@@ -15,39 +15,30 @@ offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_s2hqy")
 script = ExtResource("2_bbig2")
 
-[node name="ItemIcon" type="TextureRect" parent="."]
-visible = false
-custom_minimum_size = Vector2(28, 28)
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -15.0
-offset_top = -15.0
-offset_right = 15.0
-offset_bottom = 15.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ItemIcon" type="TextureRect" parent="MarginContainer"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="QuantityLabel" type="Label" parent="."]
+[node name="QuantityLabel" type="Label" parent="MarginContainer"]
 visible = false
 texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -15.0
-offset_top = -15.0
-offset_right = 25.0
-offset_bottom = 8.0
-grow_horizontal = 0
-grow_vertical = 0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("3_c13kb")
 theme_override_font_sizes/font_size = 12
 text = "99"

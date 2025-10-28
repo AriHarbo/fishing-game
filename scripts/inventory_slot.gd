@@ -1,7 +1,7 @@
 extends Panel
 class_name InventorySlot
 
-@onready var item_icon: TextureRect = $ItemIcon
+@onready var item_icon: TextureRect = $MarginContainer/ItemIcon
 @onready var quantity_label: Label = $QuantityLabel
 
 var slot_index: int = -1

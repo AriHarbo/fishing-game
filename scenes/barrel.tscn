@@ -17,7 +17,10 @@ texture = ExtResource("2_n8wf6")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 z_index = 1
-position = Vector2(0, -17)
+position = Vector2(1, -3.875)
 
 [node name="KeyPrompt" parent="." index="2"]
-position = Vector2(0, -46)
+position = Vector2(0, -98)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 20.25)

@@ -31,8 +31,9 @@ func add_item(item: Item) -> bool:
 					inventory[i].quantity += item.quantity
 					inventory_changed.emit()
 					return true
-	
-	# Buscar primer slot vacío
+	for i in range(inventory.size()):
+			if inventory[i] != null and inventory[i].id == item.id:
+				return false
 	for i in range(inventory.size()):
 		if inventory[i] == null:
 			inventory[i] = item.duplicate_item()

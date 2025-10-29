@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd8xrw1c46gqf"
-path="res://.godot/imported/grassTile64.png-06df4af0e9f4b86157b6459cba5fb132.ctex"
+uid="uid://2ohad5i082jx"
+path="res://.godot/imported/bloqueAgua.png-aaf557c5733a143c3c33eb2c28320947.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles_64/grassTile64.png"
-dest_files=["res://.godot/imported/grassTile64.png-06df4af0e9f4b86157b6459cba5fb132.ctex"]
+source_file="res://assets/tiles_64/bloqueAgua.png"
+dest_files=["res://.godot/imported/bloqueAgua.png-aaf557c5733a143c3c33eb2c28320947.ctex"]
 
 [params]
 

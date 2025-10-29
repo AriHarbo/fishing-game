@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu75p7upyo02j"
-path="res://.godot/imported/fishing_zone_anim.png-9eb3603d5e9061d4ecd6be15a0cc8dad.ctex"
+uid="uid://dt7lqq31gtjh2"
+path="res://.godot/imported/fishAnimation.png-3420646eda105418f7d6a84427626585.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fishing_zone_anim.png"
-dest_files=["res://.godot/imported/fishing_zone_anim.png-9eb3603d5e9061d4ecd6be15a0cc8dad.ctex"]
+source_file="res://assets/sprites/fishAnimation.png"
+dest_files=["res://.godot/imported/fishAnimation.png-3420646eda105418f7d6a84427626585.ctex"]
 
 [params]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://da0arvkiuuu85"]
+[gd_scene load_steps=9 format=3 uid="uid://cflsn17us1j38"]
 
-[ext_resource type="PackedScene" uid="uid://cawfmtjg4edu3" path="res://scenes/interactable.tscn" id="1_om7wm"]
-[ext_resource type="Texture2D" uid="uid://bu75p7upyo02j" path="res://assets/sprites/fishing_zone_anim.png" id="2_lrj3b"]
+[ext_resource type="Script" uid="uid://b2yn2y7bg8lfv" path="res://scripts/fishing_zone.gd" id="1_dri1d"]
+[ext_resource type="Texture2D" uid="uid://dt7lqq31gtjh2" path="res://assets/sprites/fishAnimation.png" id="1_psjfr"]
+[ext_resource type="Texture2D" uid="uid://biseky6f6l6jr" path="res://assets/ui/mouseClicked.png" id="3_a3ns7"]
 
-[sub_resource type="Animation" id="Animation_g20af"]
+[sub_resource type="Animation" id="Animation_a3ns7"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -18,8 +19,9 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_7dyog"]
-resource_name = "ripple"
+[sub_resource type="Animation" id="Animation_dri1d"]
+resource_name = "idle"
+length = 3.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -28,27 +30,54 @@ tracks/0/path = NodePath("Visual:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.666667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.465313, 0.933333, 1.39594, 1.86667, 2.31288, 2.76451, 3.21614),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0pprw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5fxs"]
 _data = {
-&"RESET": SubResource("Animation_g20af"),
-&"ripple": SubResource("Animation_7dyog")
+&"RESET": SubResource("Animation_a3ns7"),
+&"idle": SubResource("Animation_dri1d")
 }
 
-[node name="Interactable" instance=ExtResource("1_om7wm")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ola56"]
+size = Vector2(200, 200)
 
-[node name="Visual" parent="." index="0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ns7"]
+size = Vector2(86, 88)
+
+[node name="FishingZone" type="Node2D"]
+script = ExtResource("1_dri1d")
+
+[node name="Visual" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_lrj3b")
-hframes = 3
+position = Vector2(0.5, 1)
+scale = Vector2(1.01563, 1.03125)
+texture = ExtResource("1_psjfr")
+hframes = 8
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_0pprw")
+&"": SubResource("AnimationLibrary_n5fxs")
 }
-autoplay = "ripple"
+autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 6.5)
+shape = SubResource("RectangleShape2D_ola56")
+
+[node name="KeyPrompt" type="Sprite2D" parent="."]
+position = Vector2(-2, -51)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_a3ns7")
+
+[node name="AreaClickeable" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaClickeable"]
+position = Vector2(-2, 14)
+shape = SubResource("RectangleShape2D_a3ns7")

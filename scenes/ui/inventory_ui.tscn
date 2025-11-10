@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cv862nm1qub3u" path="res://assets/ui/inventory/inventario_fondo.png" id="1_tahbm"]
 [ext_resource type="Script" uid="uid://b2snik6wueu1j" path="res://scripts/inventory_ui.gd" id="1_ylkvr"]
 [ext_resource type="Texture2D" uid="uid://f877jdfktd3f" path="res://assets/ui/inventory/slot_sombrero.png" id="3_mdwe3"]
-[ext_resource type="PackedScene" uid="uid://drat2xih5j8ex" path="res://scenes/inventory_slot.tscn" id="3_rg5pf"]
+[ext_resource type="PackedScene" uid="uid://drat2xih5j8ex" path="res://scenes/ui/inventory_slot.tscn" id="3_rg5pf"]
 [ext_resource type="Texture2D" uid="uid://bov8uww13lvai" path="res://assets/ui/inventory/slot_torso.png" id="4_iradw"]
 [ext_resource type="Texture2D" uid="uid://cogqjvvy8iejl" path="res://assets/ui/inventory/slot_pantalones.png" id="5_eifbp"]
 [ext_resource type="Texture2D" uid="uid://df08wtyvu3ja4" path="res://assets/sprites/playerSprite.png" id="6_uwj4j"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://uy65perw4w3v" path="res://assets/ui/cerrar.png" id="12_cwdri"]
 [ext_resource type="Texture2D" uid="uid://cica1cgq4exbn" path="res://assets/ui/cerrarHover.png" id="13_rg5pf"]
 [ext_resource type="Script" uid="uid://cdjp46tcfyx82" path="res://scripts/close_button.gd" id="14_rg5pf"]
-[ext_resource type="PackedScene" uid="uid://qxtgrpe6cm4k" path="res://scenes/trash_can.tscn" id="15_rmxcj"]
+[ext_resource type="PackedScene" uid="uid://qxtgrpe6cm4k" path="res://scenes/ui/trash_can.tscn" id="15_rmxcj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmxcj"]
 texture = ExtResource("3_mdwe3")

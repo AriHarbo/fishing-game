@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MoveData" load_steps=2 format=3 uid="uid://bk4p7p7y6vcnm"]
+
+[ext_resource type="Script" uid="uid://bvweplpi7hb85" path="res://resources/move_data.gd" id="1_lb48a"]
+
+[resource]
+script = ExtResource("1_lb48a")
+move_name = "Aletazo"
+move_type = "water"
+power = 40
+accuracy = 100
+description = "Carga su aleta con agua para pegar un fuerte aletazo."
+category = "Physical"
+effect = "None"
+effect_chance = 0
+target_self = false
+hits = 1
+priority = 0
+metadata/_custom_type_script = "uid://bvweplpi7hb85"

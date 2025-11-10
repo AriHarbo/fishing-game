@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://c314ikvpp40nl"]
+
+[ext_resource type="Script" uid="uid://batuhwdaydaqs" path="res://scripts/team_menu.gd" id="1_1fmkd"]
+[ext_resource type="Texture2D" uid="uid://b3clshpq1xlor" path="res://assets/ui/team/teamContainer.png" id="1_el30a"]
+[ext_resource type="PackedScene" uid="uid://djex8kr07ch2i" path="res://scenes/ui/fish_slot.tscn" id="2_1fmkd"]
+
+[node name="TeamMenu" type="Control"]
+custom_minimum_size = Vector2(400, 440)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_1fmkd")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_el30a")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 35
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+
+[node name="FishSlot" parent="Background/MarginContainer/VBoxContainer" instance=ExtResource("2_1fmkd")]
+layout_mode = 2
+
+[node name="FishSlot2" parent="Background/MarginContainer/VBoxContainer" instance=ExtResource("2_1fmkd")]
+layout_mode = 2
+
+[node name="FishSlot3" parent="Background/MarginContainer/VBoxContainer" instance=ExtResource("2_1fmkd")]
+layout_mode = 2
+
+[node name="FishSlot4" parent="Background/MarginContainer/VBoxContainer" instance=ExtResource("2_1fmkd")]
+layout_mode = 2

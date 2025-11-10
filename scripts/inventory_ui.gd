@@ -12,7 +12,7 @@ var slot_rod: InventorySlot
 var slot_bait: InventorySlot
 
 # Cargar la escena del slot
-var slot_scene = preload("res://scenes/inventory_slot.tscn")  # Ajusta la ruta si es diferente
+var slot_scene = preload("res://scenes/ui/inventory_slot.tscn")  # Ajusta la ruta si es diferente
 
 func _ready():
 	visible = false

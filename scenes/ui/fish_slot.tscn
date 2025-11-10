@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://djex8kr07ch2i"]
+
+[ext_resource type="Texture2D" uid="uid://b7tcnsf1b1a7j" path="res://assets/ui/team/Sprite-fishSlot.png" id="1_ir2xw"]
+[ext_resource type="Script" uid="uid://8rinf3x1kg1q" path="res://scripts/fish_slot.gd" id="1_q4wmr"]
+[ext_resource type="FontFile" uid="uid://dj7k136noki4a" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_q4wmr"]
+
+[node name="FishSlot" type="Control"]
+custom_minimum_size = Vector2(320, 90)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_q4wmr")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ir2xw")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FishIcon" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 85.0
+offset_bottom = 85.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FishName" type="Label" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(120, 3)
+layout_mode = 0
+offset_left = 99.6667
+offset_top = 9.0
+offset_right = 234.667
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.866667, 0.756863, 0.560784, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q4wmr")
+theme_override_font_sizes/font_size = 36
+text = "??????????"
+
+[node name="HPBar" type="TextureProgressBar" parent="."]
+layout_direction = 2
+layout_mode = 0
+offset_left = 120.222
+offset_top = 55.1111
+offset_right = 222.222
+offset_bottom = 78.1111
+value = 100.0
+tint_progress = Color(0.659386, 0.18188, 0.118013, 1)
+
+[node name="PSText" type="Label" parent="HPBar"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.866667, 0.756863, 0.560784, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q4wmr")
+theme_override_font_sizes/font_size = 20
+text = "PS"
+
+[node name="HPText" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 85.5555
+offset_top = 48.8889
+offset_right = 125.556
+offset_bottom = 83.8889
+theme_override_colors/font_color = Color(0.52549, 0.294118, 0.12549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_q4wmr")
+theme_override_font_sizes/font_size = 32
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ElementContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 246.222
+offset_top = 7.77778
+offset_right = 315.222
+offset_bottom = 77.7778
+alignment = 1
+
+[node name="Element1" type="TextureRect" parent="ElementContainer"]
+visible = false
+custom_minimum_size = Vector2(70, 35)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Element2" type="TextureRect" parent="ElementContainer"]
+visible = false
+custom_minimum_size = Vector2(70, 35)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5

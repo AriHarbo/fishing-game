@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=5 format=3 uid="uid://ddjo1ghgr6atj"]
+
+[ext_resource type="Script" uid="uid://bvweplpi7hb85" path="res://resources/move_data.gd" id="1_tmpig"]
+[ext_resource type="Resource" uid="uid://bk4p7p7y6vcnm" path="res://moves/aletazo.tres" id="2_moyd3"]
+[ext_resource type="Script" uid="uid://btlr0hyjdk3v5" path="res://resources/fish_data.gd" id="3_m5d5p"]
+[ext_resource type="Texture2D" uid="uid://bcobhp4w0e08a" path="res://assets/fishes/carpa.png" id="4_hmpmv"]
+
+[resource]
+script = ExtResource("3_m5d5p")
+id = "fish_test"
+fish_name = "testeando"
+description = "Un simple pez carpa que obtuvo sus poderes al absorver el agua de su alrededor. Sus escamas brillan con energía elemental."
+sprite = ExtResource("4_hmpmv")
+elements = Array[String](["water"])
+rarity = "Common"
+level = 5
+current_hp = 25
+max_hp = 25
+base_atk = 10
+base_def = 12
+base_spd = 8
+current_exp = 0
+exp_to_next_level = 100
+exp_curve = "Medium"
+moves = Array[ExtResource("1_tmpig")]([ExtResource("2_moyd3")])
+passive_ability = "Adaptable"
+passive_description = "Immune to environmental changes and terrain effects."
+status = "Normal"
+weight = 8.5
+size = 45.0
+catch_location = ""
+metadata/_custom_type_script = "uid://btlr0hyjdk3v5"

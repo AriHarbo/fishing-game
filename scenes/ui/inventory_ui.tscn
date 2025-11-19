@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://drat2xih5j8ex" path="res://scenes/ui/inventory_slot.tscn" id="3_rg5pf"]
 [ext_resource type="Texture2D" uid="uid://bov8uww13lvai" path="res://assets/ui/inventory/slot_torso.png" id="4_iradw"]
 [ext_resource type="Texture2D" uid="uid://cogqjvvy8iejl" path="res://assets/ui/inventory/slot_pantalones.png" id="5_eifbp"]
-[ext_resource type="Texture2D" uid="uid://df08wtyvu3ja4" path="res://assets/sprites/playerSprite.png" id="6_uwj4j"]
 [ext_resource type="Texture2D" uid="uid://7vo2edae5v1" path="res://assets/ui/inventory/slot_pesca.png" id="7_1dxi5"]
+[ext_resource type="Texture2D" uid="uid://qm28jurp210a" path="res://assets/sprites/baseCaracter.png" id="7_g4q4h"]
 [ext_resource type="Texture2D" uid="uid://dayij3hkv6aom" path="res://assets/ui/inventory/slot_cebo.png" id="8_dqfnd"]
 [ext_resource type="FontFile" uid="uid://dj7k136noki4a" path="res://assets/fonts/Jersey10-Regular.ttf" id="10_dqfnd"]
 [ext_resource type="Texture2D" uid="uid://cfgghqyhtuec6" path="res://assets/sprites/coin.png" id="11_ngbl7"]
@@ -95,12 +95,13 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_rc4hi")
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = ExtResource("6_uwj4j")
+texture = ExtResource("7_g4q4h")
 stretch_mode = 5
 
 [node name="EquipmentRight" type="VBoxContainer" parent="TextureRect/TopSection/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 2
+alignment = 1
 
 [node name="SlotRod" parent="TextureRect/TopSection/HBoxContainer/EquipmentRight" instance=ExtResource("3_rg5pf")]
 layout_mode = 2

@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://c4exh1bvqhdn4"]
+
+[ext_resource type="Script" uid="uid://bq4ctfxkfd6oc" path="res://scripts/hud.gd" id="1_4jqwt"]
+[ext_resource type="Texture2D" uid="uid://d3ikn8e4ai1k8" path="res://assets/ui/hud/bagIcon-transparent.png" id="1_8qguk"]
+[ext_resource type="Texture2D" uid="uid://dqr6qc24yisbe" path="res://assets/ui/hud/optionsIcon-transparent.png" id="1_oj5la"]
+[ext_resource type="Texture2D" uid="uid://err66pbrpp3w" path="res://assets/ui/hud/bagIcon.png" id="2_136eg"]
+[ext_resource type="Texture2D" uid="uid://bjvakbd5t2s61" path="res://assets/ui/hud/optionsIcon.png" id="2_gss2c"]
+[ext_resource type="Texture2D" uid="uid://8cqd8k6tfvga" path="res://assets/ui/hud/teamIcon-transparent.png" id="3_oj5la"]
+[ext_resource type="Texture2D" uid="uid://d3r4od6hvyklk" path="res://assets/ui/hud/teamIcont.png" id="4_gss2c"]
+[ext_resource type="Texture2D" uid="uid://cnjp33dkxfl0t" path="res://assets/ui/hud/questsIcon-transparent.png" id="7_h022r"]
+[ext_resource type="Texture2D" uid="uid://cgfwhyjqedtab" path="res://assets/ui/questsIcon.png" id="8_4jqwt"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_4jqwt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -103.0
+offset_right = 292.0
+offset_bottom = 69.0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+alignment = 1
+
+[node name="OptionsButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_oj5la")
+texture_hover = ExtResource("2_gss2c")
+
+[node name="InventoryButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_8qguk")
+texture_hover = ExtResource("2_136eg")
+
+[node name="TeamButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_oj5la")
+texture_hover = ExtResource("4_gss2c")
+
+[node name="QuestsButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_h022r")
+texture_hover = ExtResource("8_4jqwt")
+
+[connection signal="pressed" from="Control/HBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/TeamButton" to="." method="_on_team_button_pressed"]

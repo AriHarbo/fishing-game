@@ -1,6 +1,8 @@
 extends Control
 class_name FishSlot
 
+signal slot_clicked(slot_index: int) # Señal que detecta clicks
+
 # Referencias a los nodos
 @onready var background: TextureRect = $Background
 @onready var fish_icon: TextureRect = $FishIcon
@@ -12,8 +14,11 @@ class_name FishSlot
 @onready var element_icon_2: TextureRect = $ElementContainer/Element2
 
 # Datos del pez
-var fish_data: Dictionary = {}
+var fish_data: Variant = {}
 var is_empty: bool = true
+
+var slot_index: int = -1  # Índice del slot en el equipo
+var is_selected: bool = false  # Si está seleccionado actualmente
 
 # Iconos de elementos (debes asignarlos en el inspector o cargarlos)
 @export var element_icons: Dictionary = {
@@ -24,6 +29,15 @@ func _ready():
 	# Asegurarse de que el HPBar tenga las texturas necesarias si no están en el inspector
 	setup_hp_bar()
 	clear_slot()
+	mouse_filter = Control.MOUSE_FILTER_STOP # Esto hace que el slot sea clickeable
+
+	
+func _gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			# Solo emite señal si el slot no está vacío
+			if not is_empty:
+				slot_clicked.emit(slot_index)
 
 func setup_hp_bar():
 	# Si el HPBar no tiene texturas asignadas, usar ColorRect como alternativa
@@ -41,29 +55,38 @@ func create_simple_texture(size: Vector2, color: Color) -> ImageTexture:
 	return ImageTexture.create_from_image(img)
 
 # Configurar el slot con datos de un pez
-func set_fish(fish: Dictionary):
+func set_fish(fish: Variant):
 	fish_data = fish
 	is_empty = false
 	
+	# Detectar si es FishData o Dictionary
+	var is_resource = fish is FishData
+	
 	# Mostrar icono del pez
-	if fish.has("icon") and fish.icon:
-		fish_icon.texture = fish.icon
+	var icon = fish.sprite if is_resource else (fish.get("icon") if fish.has("icon") else null)
+	if icon:
+		fish_icon.texture = icon
 		fish_icon.visible = true
 	
 	# Mostrar nombre del pez
-	if fish.has("name"):
-		fish_name_label.text = fish.name
+	var name = fish.fish_name if is_resource else (fish.get("name") if fish.has("name") else "")
+	if name:
+		fish_name_label.text = name
 		fish_name_label.visible = true
 	
 	# Configurar barra de HP
-	if fish.has("current_hp") and fish.has("max_hp"):
+	var current = fish.current_hp if is_resource else (fish.get("current_hp") if fish.has("current_hp") else 0)
+	var maximum = fish.max_hp if is_resource else (fish.get("max_hp") if fish.has("max_hp") else 0)
+	
+	if current and maximum:
 		hp_bar.visible = true
-		hp_bar.max_value = fish.max_hp
-		hp_bar.value = fish.current_hp
-		ps_text.text = str(fish.current_hp) + "/" + str(fish.max_hp)
+		hp_bar.max_value = maximum
+		hp_bar.value = current
+		ps_text.text = str(current) + "/" + str(maximum)
 	
 	# Configurar elementos
-	setup_elements(fish.get("elements", []))
+	var elements = fish.elements if is_resource else fish.get("elements", [])
+	setup_elements(elements)
 
 # Configura los iconos de elementos
 func setup_elements(elements: Array):
@@ -108,3 +131,13 @@ func update_hp(current: int, maximum: int):
 # Verificar si el slot está vacío
 func is_slot_empty() -> bool:
 	return is_empty
+
+func set_selected(selected: bool):
+	is_selected = selected
+	
+	if selected:
+		# Resaltar el slot seleccionado (tono amarillento/dorado)
+		modulate = Color(1.2, 1.2, 0.8)
+	else:
+		# Color normal
+		modulate = Color.WHITE

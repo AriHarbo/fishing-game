@@ -2,10 +2,14 @@ extends Control
 @onready var btn_continue = $VBoxContainer/CenterContainer/PanelContainer/VBoxContainer/ButtonContinue
 
 func _ready():
-	# Verificar si existe un save para habilitar/deshabilitar Continue
-	# (cuando implementes SaveManager)
-	# btn_continue.disabled = not SaveManager.save_exists()
+	var cursor_image = load("res://assets/ui/gameCursor.png")
+	Input.set_custom_mouse_cursor(cursor_image, Input.CURSOR_ARROW, Vector2(0, 0))
 	
+	var cursor_grab = load("res://assets/ui/grabCursor.png")
+	Input.set_custom_mouse_cursor(cursor_grab, Input.CURSOR_DRAG, Vector2(0, 0))
+	
+	var cursor_hover = load("res://assets/ui/hoverCursor.png")
+	Input.set_custom_mouse_cursor(cursor_hover, Input.CURSOR_POINTING_HAND, Vector2(0, 0))
 	# Por ahora, deshabilitar Continue si no hay sistema de guardado
 	btn_continue.disabled = true
 	

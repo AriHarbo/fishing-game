@@ -11,6 +11,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.9, 0.9)
+mouse_default_cursor_shape = 2
 script = ExtResource("1_q4wmr")
 
 [node name="Background" type="TextureRect" parent="."]

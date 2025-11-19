@@ -23,7 +23,7 @@ func _ready():
 	area.body_exited.connect(_on_body_exited)
 
 func _process(_delta):
-	z_index = int(global_position.y)
+	z_index = int(global_position.y / 10)
 	# Cada frame verificamos si el jugador está cerca Y presiona E
 	if player_nearby and Input.is_action_just_pressed("ui_interact"):
 		interact()

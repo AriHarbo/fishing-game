@@ -1,83 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://cflsn17us1j38"]
+[gd_scene load_steps=5 format=3 uid="uid://bqb53durcti3n"]
 
-[ext_resource type="Script" uid="uid://b2yn2y7bg8lfv" path="res://scripts/fishing_zone.gd" id="1_dri1d"]
-[ext_resource type="Texture2D" uid="uid://dt7lqq31gtjh2" path="res://assets/sprites/fishAnimation.png" id="1_psjfr"]
-[ext_resource type="Texture2D" uid="uid://biseky6f6l6jr" path="res://assets/ui/mouseClicked.png" id="3_a3ns7"]
+[ext_resource type="Script" uid="uid://bxia1341wmsj8" path="res://scripts/fishing_zone.gd" id="1_a3ns7"]
+[ext_resource type="Texture2D" uid="uid://c6h52pxknu5yp" path="res://assets/sprites/fishTest.png" id="1_dri1d"]
+[ext_resource type="Texture2D" uid="uid://ipowcih2n4hk" path="res://assets/ui/letterE.png" id="3_a3ns7"]
 
-[sub_resource type="Animation" id="Animation_a3ns7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5fxs"]
+size = Vector2(183, 206)
 
-[sub_resource type="Animation" id="Animation_dri1d"]
-resource_name = "idle"
-length = 3.7
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.465313, 0.933333, 1.39594, 1.86667, 2.31288, 2.76451, 3.21614),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5fxs"]
-_data = {
-&"RESET": SubResource("Animation_a3ns7"),
-&"idle": SubResource("Animation_dri1d")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ola56"]
-size = Vector2(200, 200)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ns7"]
-size = Vector2(86, 88)
-
-[node name="FishingZone" type="Node2D"]
-script = ExtResource("1_dri1d")
+[node name="FishingZone" type="Node2D" groups=["fishing_zones"]]
+z_index = 1
+script = ExtResource("1_a3ns7")
 
 [node name="Visual" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(0.5, 1)
-scale = Vector2(1.01563, 1.03125)
-texture = ExtResource("1_psjfr")
-hframes = 8
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_n5fxs")
-}
-autoplay = "idle"
+texture = ExtResource("1_dri1d")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 6.5)
-shape = SubResource("RectangleShape2D_ola56")
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_n5fxs")
 
 [node name="KeyPrompt" type="Sprite2D" parent="."]
-position = Vector2(-2, -51)
-scale = Vector2(0.1, 0.1)
+position = Vector2(0, -95)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_a3ns7")
-
-[node name="AreaClickeable" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaClickeable"]
-position = Vector2(-2, 14)
-shape = SubResource("RectangleShape2D_a3ns7")

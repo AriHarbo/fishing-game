@@ -41,7 +41,6 @@ func add_item(item: Item) -> bool:
 			return true
 	
 	# Inventario lleno
-	print("Inventario lleno!")
 	return false
 	
 # Mover item entre slots del inventario

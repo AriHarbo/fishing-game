@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("2_e81q5")
 id = "fish_carp"
-fish_name = "Carp"
+fish_name = "Carpa"
 description = "Un simple pez carpa que obtuvo sus poderes al absorver el agua de su alrededor. Sus escamas brillan con energía elemental."
 sprite = ExtResource("3_e81q5")
 elements = Array[String](["water"])
@@ -23,8 +23,8 @@ current_exp = 0
 exp_to_next_level = 100
 exp_curve = "Medium"
 moves = Array[ExtResource("1_5ysrl")]([ExtResource("2_8rw25")])
-passive_ability = "Tolerancia ambiental"
-passive_description = "No le afectan los cambios del entorno."
+passive_ability = "Adaptable"
+passive_description = "Immune to environmental changes and terrain effects."
 status = "Normal"
 weight = 8.5
 size = 45.0

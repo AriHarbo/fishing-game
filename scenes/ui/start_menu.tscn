@@ -90,6 +90,7 @@ theme_override_constants/separation = 0
 [node name="ButtonNewGame" type="Button" parent="VBoxContainer/CenterContainer/PanelContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.972549, 0.933333, 0.737255, 1)
 theme_override_constants/h_separation = 5
 theme_override_fonts/font = ExtResource("3_tbbht")
@@ -109,6 +110,7 @@ icon_pressed = ExtResource("6_o4f7m")
 [node name="ButtonContinue" type="Button" parent="VBoxContainer/CenterContainer/PanelContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 8
 theme_override_colors/font_color = Color(0.972549, 0.933333, 0.737255, 1)
 theme_override_constants/h_separation = 5
 theme_override_fonts/font = ExtResource("3_tbbht")
@@ -128,6 +130,7 @@ icon_pressed = ExtResource("8_5wrxu")
 [node name="ButtonOptions" type="Button" parent="VBoxContainer/CenterContainer/PanelContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.972549, 0.933333, 0.737255, 1)
 theme_override_constants/h_separation = 5
 theme_override_fonts/font = ExtResource("3_tbbht")
@@ -147,6 +150,7 @@ icon_pressed = ExtResource("9_fwg3k")
 [node name="ButtonExit" type="Button" parent="VBoxContainer/CenterContainer/PanelContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.972549, 0.933333, 0.737255, 1)
 theme_override_constants/h_separation = 5
 theme_override_fonts/font = ExtResource("3_tbbht")

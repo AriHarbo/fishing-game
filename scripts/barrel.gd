@@ -11,18 +11,14 @@ func _ready():
 
 func interact():
 	super.interact()
-	print("=== INTERACT LLAMADO ===")
-	print("Item to give: ", item_to_give)
 	
 	# Verificar que el item existe
 	if item_to_give == null:
 		print("Error: No hay item asignado al barril")
 		return
 	
-	print("Buscando jugador...")
 	# Buscar el inventario del jugador
 	var player = get_tree().get_first_node_in_group("player")
-	print("Player encontrado: ", player)
 	
 	if player:
 		var inventory_manager = player.get_node_or_null("InventoryManager")
